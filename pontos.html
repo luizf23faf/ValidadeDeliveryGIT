@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pontos - ValidaDelivery</title>
+  <link rel="stylesheet" href="pontos.css">
+</head>
+<body>
+  <!-- Formas geométricas decorativas -->
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+  <div class="geo-shape"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="img/Captura de tela 2025-10-06 162710.png" alt="ValidaDelivery Logo" class="logo-icon">
+      <span class="logo-text">ValidaDelivery</span>
+    </div>
+    <nav>
+      <a href="#" class="nav-link active">
+        <span class="nav-icon"></span>
+        Início
+      </a>
+      <a href="#" class="nav-link">
+        <span class="nav-icon"></span>
+        Pontos
+      </a>
+      <a href="passe.html" class="nav-link">
+        <span class="nav-icon"></span>
+        Passe
+      </a>
+      <a href="#" class="nav-link">
+        <span class="nav-icon"></span>
+        Ecopontos
+      </a>
+    </nav>
+    <a href="perfil.html" class="perfil">
+      <span class="perfil-icon"></span>
+      <img src="img/Captura_de_tela_2025-10-22_165502-removebg-preview (1).png"git config --global user.email "luizrosaleo123@gmail.com" width="50"
+      <span>Perfil</span>
+    </a>
+  </header>
+
+  <div class="wrap" role="application" aria-label="Painel EcoPontos">
+    <div class="content">
+      <!-- points -->
+      <section class="points-card" aria-labelledby="pointsTitle">
+        <div class="points-top">
+          <div>
+            <div id="pointsTitle" class="points-title">🌱 PONTOS VALIDADELIVERY</div>
+            <div class="points-sub">Salve alimentos e ganhe recompensas</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:12px; color: rgba(255,255,255,0.95)">Seu saldo</div>
+            <div id="pointsDisplay" class="points-value" aria-live="polite">156</div>
+          </div>
+        </div>
+
+        <div class="points-label">Pontos Disponíveis</div>
+        <div id="moneyApprox" class="points-value-money">≈ R$ 8,45 em descontos</div>
+
+        <div class="impact-grid" role="list">
+          <div class="impact" role="listitem">
+            <div class="num" id="mealsSaved">12</div>
+            <div class="lbl">🍔 Refeições Salvas</div>
+          </div>
+          <div class="impact" role="listitem">
+            <div class="num" id="co2avoided">3.2kg</div>
+            <div class="lbl">♻️ CO₂ Evitado</div>
+          </div>
+        </div>
+
+        <button class="earn-btn" id="openEarn">🌟 GANHE MAIS PONTOS</button>
+      </section>
+
+      <!-- mission -->
+      <section class="section">
+        <h2>🎯 Missões Sustentáveis</h2>
+        <div class="mission">
+          <div class="title">🔥 Missão Semanal Ativa</div>
+          <div class="desc">Salve 5 produtos próximos da validade esta semana</div>
+          <div class="prize">+50 Pontos Bônus 🎁</div>
+        </div>
+      </section>
+
+      <!-- checkin -->
+      <section class="section">
+        <h2>📅 Check-in Sustentável</h2>
+        <div id="checkinGrid" class="checkin-grid" aria-label="grid de checkin">
+          <!-- Days will be rendered by JS -->
+        </div>
+
+        <div class="streak" id="streakInfo">
+          <div class="streak-title">🔥 0 Dias Salvando o Planeta</div>
+          <div class="streak-desc">Faça check-in diariamente para ganhar bônus</div>
+        </div>
+      </section>
+
+      <!-- rewards -->
+      <section class="section">
+        <h2>🎁 Trocar Pontos</h2>
+        <div class="rewards-grid" id="rewardsGrid">
+          <!-- rewards rendered by JS -->
+        </div>
+      </section>
+
+      <!-- history -->
+      <section class="section">
+        <h2>📋 Histórico de Impacto</h2>
+        <div id="historyList" aria-live="polite">
+          <!-- history items -->
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal backdrop -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" id="modalWindow" role="document">
+      <h3 id="modalTitle">Modal</h3>
+      <div id="modalBody" style="margin-top:8px"></div>
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:12px">
+        <button class="close" id="modalCancel">Fechar</button>
+        <button class="close" id="modalConfirm" style="background:linear-gradient(90deg,var(--primary),var(--primary-light)); color:white">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="pontos.js"></script>
+</body>
+</html>

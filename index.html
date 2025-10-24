@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sistema de login do Valida Delivery - Entre com sua conta ou registre-se">
+  <title>Valida Delivery - Login</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Logo sobre os cards -->
+  <header class="logo-header">
+    <img src="img/Captura de tela 2025-09-29 160154.PNG" alt="Logo Valida Delivery" class="logo">
+  </header>
+
+  <!-- Container de notificações -->
+  <div id="notification-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="wrap" role="main">
+
+    <!-- Card de login social -->
+    <div class="card" aria-labelledby="social-title">
+      <h2 id="social-title">Entrar</h2>
+      
+      <button 
+        type="button"
+        class="btn social" 
+        onclick="loginWithProvider(event, 'google')" 
+        aria-label="Entrar com Google">
+        🔍 Continuar com Google
+      </button>
+      
+      <button 
+        type="button"
+        class="btn social" 
+        onclick="loginWithProvider(event, 'facebook')" 
+        aria-label="Entrar com Facebook">
+        📘 Continuar com Facebook
+      </button>
+      
+      <button 
+        type="button"
+        class="btn social" 
+        onclick="loginWithProvider(event, 'apple')" 
+        aria-label="Entrar com Apple">
+        🍎 Continuar com Apple
+      </button>
+      
+      <button 
+        type="button"
+        class="btn primary" 
+        onclick="showRegister()" 
+        aria-label="Registrar nova conta">
+        ✨ Registrar
+      </button>
+    </div>
+
+    <!-- Divisor OU -->
+    <div class="ou" aria-hidden="true">OU</div>
+
+    <!-- Card de login -->
+    <div class="card" aria-labelledby="login-title">
+      <h2 id="login-title">Login</h2>
+      
+      <form id="loginForm" novalidate>
+        
+        <!-- Campo de Email -->
+        <div class="input-group" id="email-group">
+          <span class="icon" aria-hidden="true">✉</span>
+          <input 
+            id="email" 
+            name="email" 
+            type="email" 
+            placeholder="Email" 
+            autocomplete="email" 
+            aria-describedby="email-error" 
+            aria-required="true" 
+            required 
+          />
+          <div class="error-message" id="email-error" role="alert">
+            Email inválido
+          </div>
+        </div>
+
+        <!-- Campo de Senha -->
+        <div class="input-group" id="password-group">
+          <span class="icon" aria-hidden="true">🔒</span>
+          <input 
+            id="password" 
+            name="password" 
+            type="password" 
+            placeholder="Senha" 
+            autocomplete="current-password" 
+            minlength="6" 
+            aria-describedby="password-error" 
+            aria-required="true" 
+            required 
+          />
+          <span 
+            class="eye-icon" 
+            role="button" 
+            tabindex="0" 
+            aria-label="Mostrar senha" 
+            id="eyeBtn">
+            👁
+          </span>
+          <div class="error-message" id="password-error" role="alert">
+            Senha inválida (mínimo 6 caracteres, contenha letras e números)
+          </div>
+
+          <!-- Barra de força da senha -->
+          <div class="strength" aria-hidden="true">
+            <i id="strengthBar"></i>
+          </div>
+          <div id="strengthText"></div>
+        </div>
+
+        <!-- Links adicionais -->
+        <div class="additional">
+          <label class="remember">
+            <input id="remember" type="checkbox" aria-label="Lembrar login" /> 
+            Lembrar-me
+          </label>
+          <a href="#" class="forgot" onclick="forgotPassword(event)">
+            Esqueci minha senha
+          </a>
+        </div>
+
+        <!-- Botão de login -->
+        <button type="submit" class="btn primary login-btn">
+          Entrar
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- JavaScript Externo -->
+  <script src="script-delevery.js"></script>
+</body>
+</html>
